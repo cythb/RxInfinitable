@@ -14,7 +14,7 @@ infinitableView.attach(to: self.tableView)
 
 2. 下拉刷新的请求
 
-```
+```swift
 let refreshActivity = ActivityIndicator()
 self.refreshing = refreshActivity.asDriver()
 let r0 = refreshControl.rx.controlEvent(.valueChanged).asObservable().map { () }
@@ -28,7 +28,7 @@ let r1 = r0.startWith(() ).flatMapLatest { [weak self](_) -> Observable<[Int]> i
 
 3. 上拉加载更多的请求
 
-```
+```swift
 let loadActivity = ActivityIndicator()
 self.loading = loadActivity.asDriver()
 let r2 = infinitableView.rx.didTriggerLoading.flatMapLatest { [weak self] (_) -> Observable<[Int]> in
@@ -44,7 +44,7 @@ let r2 = infinitableView.rx.didTriggerLoading.flatMapLatest { [weak self] (_) ->
 
 4. 设置请求的互斥状态。即在刷新时不能再加载更多，反之亦然。
 
-```
+```swift
 Driver.combineLatest(self.refreshing, self.loading).drive(onNext: { [weak self] (arg0) in
     guard let self = self else { return }
     let (refreshing, loading) = arg0
