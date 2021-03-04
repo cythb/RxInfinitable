@@ -7,7 +7,7 @@
 有四个步骤：
 1. 添加视图
 
-```
+```swift
 tableView.refreshControl = refreshControl
 infinitableView.attach(to: self.tableView)
 ```
