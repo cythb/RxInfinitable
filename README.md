@@ -1,5 +1,5 @@
 # RxInfinitable
-这个很小工程实现了下拉刷新数据，上拉加载更多的功能。针对上拉加载更多，由于UIKit没有提供`UIRefreshControl`，所以我简单的封装了`InfinitableView`。
+这个小工程简单实现了下拉刷新数据，上拉加载更多功能。针对上拉加载更多，由于UIKit没有提供类似`UIRefreshControl`的控件，所以我简单的封装了`InfinitableView`。
 
 ![screenshot](/Images/screen-record.gif)
 
